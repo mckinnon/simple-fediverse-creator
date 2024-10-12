@@ -1,15 +1,14 @@
 <?php
 /**
  * Plugin Name: Simple fediverse:creator
- * Plugin URI: https://wordpress.org/plugins/simple-fediverse-creator/
+ * Plugin URI: https://github.com/mckinnon/simple-fediverse-creator
  * Description: Provides a General Settings menu option to define a \"fediverse:creator\" in metatags for the whole site and also individual contributors.
  * Version: 2.0.1
  * Author: Jay McKinnon
- * Author URI: http://opendna.com/
+ * Author URI: http://opendna.com
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: simple-fediverse-creator
- * GitHub Plugin URI: https://github.com/mckinnon/simple-fediverse-creator
  *
  * 
  * Simple fediverse:creator is free software: you can redistribute it and/or modify
@@ -43,7 +42,7 @@ function simplefediversecreator_print_field() {
 	// input validation $pattern should accept any valid username up to two sub-domains (user@subsubsub.subsub.sub.domain.tld).
 	$pattern = '([a-zA-z0-9\-_.]+)(@)(([a-zA-z0-9\-_]+(\.))?)(([a-zA-z0-9\-_]+(\.))?)(([a-zA-z0-9\-_]+(\.))?)([a-zA-z0-9\-_]+)(\.)([a-zA-z0-9\-_]+)';
     // defines input field
-    echo '<input type="email" id="simplefediversecreator_username" name="simplefediversecreator_username" value="' . sanitize_email($value) . '" pattern="'. esc_attr($pattern) .'" title="' . __( 'fediverse:creator Mastodon username must be in the form of user@domain.tld', 'simple-fediverse-creator' ) .'" placeholder="user@mastodon.social" style="width:30em;"/>';
+    echo '<input type="email" id="simplefediversecreator_username" name="simplefediversecreator_username" value="' . esc_attr(sanitize_email($value)) . '" pattern="'. esc_attr($pattern) .'" title="' . esc_attr(__( 'fediverse:creator Mastodon username must be in the form of user@domain.tld', 'simple-fediverse-creator' )) .'" placeholder="user@mastodon.social" style="width:30em;"/>';
 }
 
 function simplefediversecreator_input_css() {
@@ -58,7 +57,7 @@ function simplefediversecreator_print_authors_field() {
     if ( $value !== "YES" ) {
         $value = NULL;
     }
-    echo '<input type="email" id="simplefediversecreator_allow_authors" name="simplefediversecreator_allow_authors" value="' . esc_attr($value) . '" title="undefined" style="width:6em;" placeholder="YES" /> ' . __('type "YES" to enable this feature', 'simple-fediverse-creator' );
+    echo '<input type="email" id="simplefediversecreator_allow_authors" name="simplefediversecreator_allow_authors" value="' . esc_attr($value) . '" title="undefined" style="width:6em;" placeholder="YES" /> ' . esc_attr(__('type "YES" to enable this feature', 'simple-fediverse-creator' ));
 }
 
 // Add tag to <head>
@@ -78,7 +77,7 @@ function simplefediversecreator_meta_tag() {
     }
     if ( !empty( $simplefediversecreator_username ) ) {
         $simplefediversecreator_id = explode("/", $simplefediversecreator_username);
-        echo '<meta property="fediverse:creator" name="fediverse:creator" content="' . sanitize_email( $simplefediversecreator_username ) . '"/>' . "\n";
+        echo '<meta property="fediverse:creator" name="fediverse:creator" content="' . esc_attr(sanitize_email( $simplefediversecreator_username )) . '"/>' . "\n";
     }
 }
 add_action( 'wp_head', 'simplefediversecreator_meta_tag');
