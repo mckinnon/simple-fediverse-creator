@@ -45,7 +45,7 @@ function simplefediversecreator_print_field() {
     echo '<input type="email" id="simplefediversecreator_username" name="simplefediversecreator_username" value="' . esc_attr(sanitize_email($value)) . '" pattern="'. esc_attr($pattern) .'" title="' . esc_attr(__( 'fediverse:creator Mastodon username must be in the form of user@domain.tld', 'simple-fediverse-creator' )) .'" placeholder="user@mastodon.social" style="width:30em;"/>';
 }
 
-wp_add_inline_style( 'admin-bar', strip_tags('input:invalid#simplefediversecreator_username {border: red 1px solid;}') );
+wp_add_inline_style( 'admin-bar', wp_strip_all_tags('input:invalid#simplefediversecreator_username {border: red 1px solid;}') );
 
 function simplefediversecreator_print_authors_field() {
     // allows admin to toggle Authors' fediverse:creator fields
