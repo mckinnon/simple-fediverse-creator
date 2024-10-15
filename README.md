@@ -4,7 +4,7 @@
 **Tags:** wordpress, plugin, fediverse, activitypub, mastodon  
 **Requires at least:** 6.1  
 **Tested up to:** 6.6.2  
-**Stable tag:** 1.0.3  
+**Stable tag:** 1.0.4  
 **Requires PHP:** 7.4  
 **License:** GPLv2 or later  
 **License URI:** [http://www.gnu.org/licenses/gpl-2.0.txt](http://www.gnu.org/licenses/gpl-2.0.txt)
@@ -44,6 +44,10 @@ When a valid URL has been saved, a tag containing a `name="fediverse:creator"` m
 ## Changelog ##
 
 Project maintained on GitHub at [mckinnon/simple-fediverse-creator](https://github.com/mckinnon/simple-fediverse-creator).
+
+### 1.0.4 ###
+
+* WP standards require adding CSS to the head instead of inline. Rather than enqueue a .css containing only `input:invalid{}`, I have removed the style.
 
 ### 1.0.0 ###
 
