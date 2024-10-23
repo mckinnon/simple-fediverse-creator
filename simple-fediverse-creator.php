@@ -3,7 +3,7 @@
  * Plugin Name: Simple fediverse:creator
  * Plugin URI: https://github.com/mckinnon/simple-fediverse-creator
  * Description: Provides a General Settings menu option to define a \"fediverse:creator\" in metatags for the whole site and also individual contributors.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: Jay McKinnon
  * Author URI: http://opendna.com
  * License: GPL-2.0+
