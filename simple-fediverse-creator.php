@@ -79,7 +79,7 @@ function simplefediversecreator_meta_tag() {
     }
     if ( !empty( $simplefediversecreator_username ) ) {
         $simplefediversecreator_id = explode("/", $simplefediversecreator_username);
-        echo '<meta property="fediverse:creator" name="fediverse:creator" content="' . esc_attr(sanitize_email( $simplefediversecreator_username )) . '"/>' . "\n";
+        echo '<meta name="fediverse:creator" content="@' . esc_attr(sanitize_email( $simplefediversecreator_username )) . '"/>' . "\n";
     }
 }
 add_action( 'wp_head', 'simplefediversecreator_meta_tag');
