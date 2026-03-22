@@ -3,7 +3,7 @@
  * Plugin Name: Simple fediverse:creator
  * Plugin URI: https://github.com/mckinnon/simple-fediverse-creator
  * Description: Provides a General Settings menu option to define a \"fediverse:creator\" in metatags for the whole site and also individual contributors.
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: Jay McKinnon
  * Author URI: http://opendna.com
  * License: GPL-2.0+
@@ -79,7 +79,7 @@ function simplefediversecreator_meta_tag() {
     }
     if ( !empty( $simplefediversecreator_username ) ) {
         $simplefediversecreator_id = explode("/", $simplefediversecreator_username);
-        echo '<meta name="fediverse:creator" content="@' . esc_attr(sanitize_email( $simplefediversecreator_username )) . '"/>' . "\n";
+        echo '<meta property="fediverse:creator" name="fediverse:creator" content="@' . esc_attr(sanitize_email( $simplefediversecreator_username )) . '"/>' . "\n";
     }
 }
 add_action( 'wp_head', 'simplefediversecreator_meta_tag');

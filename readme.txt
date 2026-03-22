@@ -2,9 +2,9 @@
 Contributors: opendna
 Tags: Mastodon, fediverse, verification
 Requires at least: 6.1
-Tested up to: 6.6.2
+Tested up to: 6.9.4
 Requires PHP: 7.4
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
@@ -35,6 +35,9 @@ Install the plugin from the Wordpress store and enable in the Plugin menu. Confi
 
 == Changelog ==
 Project maintained on GitHub at https://github.com/mckinnon/simple-fediverse-creator
+
+= 1.0.6 =
+Align fediverse:creator meta property to OpenGraph standard for cards.
 
 = 1.0.5 =
 Initial commit to WP store.
